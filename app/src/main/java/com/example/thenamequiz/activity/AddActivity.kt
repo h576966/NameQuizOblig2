@@ -41,7 +41,7 @@ class AddActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.settings){
-            Intent(this, setNameActivity::class.java).also {
+            Intent(this, NameActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -63,7 +63,7 @@ class AddActivity : AppCompatActivity() {
         startActivityForResult(intent, REQUEST_IMAGE_PICK)
     }
 
-    fun addKitten(view: View){
+    fun addPerson(view: View){
         val bitmap: Bitmap = (imageView.drawable as BitmapDrawable).bitmap
         val person = Person(inputText.text.toString(), bitmap)
         val data = (application as PersonList).data

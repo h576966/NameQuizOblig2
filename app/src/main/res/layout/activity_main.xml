@@ -8,27 +8,29 @@
     tools:context=".activity.MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonQuiz"
+        android:id="@+id/button2"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FF85ECDC"
         android:gravity="center_horizontal"
+        android:onClick="onClickQuiz"
         android:text="@string/quiz"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDatabase"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonDatabase"
+        android:id="@+id/button"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF85ECDC"
         android:gravity="center_horizontal"
+        android:onClick="onClickDatabase"
         android:text="@string/database"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -40,12 +42,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonAdd"
+        android:id="@+id/button3"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="#85ECDC"
         android:gravity="center_horizontal"
+        android:onClick="onClickAdd"
         android:text="@string/add"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -53,5 +56,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDatabase" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
