@@ -10,6 +10,9 @@ import com.example.thenamequiz.databinding.ActivityAddBinding
 
 import android.widget.ImageView
 
+import kotlinx.android.synthetic.main.activity_add.*
+import kotlinx.android.synthetic.main.person_layout.*
+
 
 import android.provider.MediaStore
 import android.view.Menu
@@ -65,7 +68,7 @@ class AddActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val imageView = findViewById<ImageView>(R.id.imageView)
-        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_IMAGE_PICK){
+        if (resultCode == RESULT_OK && requestCode == REQUEST_IMAGE_PICK){
             imageView.setImageURI(data?.data)
             imageAdded(isAdded = true)
         }

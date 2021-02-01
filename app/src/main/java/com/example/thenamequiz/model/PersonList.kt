@@ -7,13 +7,17 @@ import java.util.*
 
 
 class PersonList : Application(){
-    var personList = ArrayList<Person>()
+   lateinit var data: ArrayList<Person>
+
+
 
     override fun onCreate() {
         super.onCreate()
-        personList.add(Person("Hassan", BitmapFactory.decodeResource(resources, R.drawable.hassan)))
-        personList.add(Person("Peter", BitmapFactory.decodeResource(resources, R.drawable.peter)))
-        personList.add(Person("Sivert", BitmapFactory.decodeResource(resources, R.drawable.sivert)))
+        data.add(Person("Hassan", BitmapFactory.decodeResource(resources, R.drawable.hassan)))
+        data.add(Person("Peter", BitmapFactory.decodeResource(resources, R.drawable.peter)))
+        data.add(Person("Sivert", BitmapFactory.decodeResource(resources, R.drawable.sivert)))
     }
+
+
 }
 

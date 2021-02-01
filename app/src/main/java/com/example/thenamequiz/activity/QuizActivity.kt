@@ -20,6 +20,10 @@ import java.net.PasswordAuthentication
 import java.util.*
 import kotlin.collections.ArrayList
 
+import android.content.Context
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_quiz.*
+
 class QuizActivity : AppCompatActivity() {
 
     lateinit var quiz: Quiz
