@@ -2,12 +2,12 @@ package com.example.thenamequiz.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.R
-import com.example.thenamequiz.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
+
+
 
 
 class MainActivity : AppCompatActivity() {
