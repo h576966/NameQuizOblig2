@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.settings){
-            Intent(this, setNameActivity::class.java).also {
+            Intent(this, NameActivity::class.java).also {
                 startActivity(it)
             }
         }
