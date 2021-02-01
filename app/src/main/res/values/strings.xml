@@ -28,4 +28,12 @@
     <string name="buttonphoto">buttonPhoto</string>
     <string name="backtodb">backToDb</string>
     <string name="addactivity">addActivity</string>
+    <string name="save_pref_name">Save pref name</string>
+    <string name="change_pref_name">Change pref name</string>
+    <string name="back_to_menu">Back to menu</string>
+    <string name="show_pref_name">Show pref name</string>
+    <string name="back">Back</string>
+    <string name="your_score">Your score</string>
+    <string name="submitanswer">SubmitAnswer</string>
+    <string name="restartbtn">restartBtn</string>
 </resources>
