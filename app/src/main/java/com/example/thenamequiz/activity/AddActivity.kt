@@ -40,7 +40,7 @@ class AddActivity : AppCompatActivity() {
 
 
     fun onClickDatabase2(view: View){
-        val database = Intent(this, DbActivity::class.java)
+        val database = Intent(this, DatabaseActivity::class.java)
 
         startActivity(database)
     }

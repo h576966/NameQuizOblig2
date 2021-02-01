@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun onClickDatabase(view: View){
-        val database = Intent(this, DbActivity::class.java)
+        val database = Intent(this, DatabaseActivity::class.java)
 
         startActivity(database)
     }
