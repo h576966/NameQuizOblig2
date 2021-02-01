@@ -33,7 +33,7 @@
                 android:layout_width="190dp"
                 android:layout_height="60dp"
                 android:textAlignment="center"
-                android:text="@string/deletePic"
+                android:text="deletePic"
                 android:layout_gravity="center"
                 />
 

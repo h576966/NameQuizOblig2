@@ -36,4 +36,15 @@
     <string name="your_score">Your score</string>
     <string name="submitanswer">SubmitAnswer</string>
     <string name="restartbtn">restartBtn</string>
+    <string name="add_activity">Add activity</string>
+    <string name="photo_image">photo image</string>
+    <string name="add_photo">Add photo</string>
+    <string name="name">Name</string>
+    <string name="addactivity">addActivity</string>
+    <string name="go_to_database">Go to database</string>
+    <string name="quiz_time">Quiz time!</string>
+    <string name="write_answere_here">Write answere here</string>
+    <string name="submit_answer">Submit answer</string>
+    <string name="restart_quiz">Restart quiz!</string>
+    <string name="todo">TODO</string>
 </resources>

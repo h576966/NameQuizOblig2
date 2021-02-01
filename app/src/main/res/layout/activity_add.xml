@@ -8,20 +8,20 @@
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:contentDescription="@string/buttonphoto" />
+        android:contentDescription="@string/photo_image" />
 
     <Button
         android:id="@+id/buttonPhoto"
         android:layout_width="190dp"
         android:layout_height="100dp"
         android:onClick="pickPhoto"
-        android:text="@string/button_photo" />
+        android:text="@string/add_photo" />
 
     <EditText
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint2"
+        android:hint="@string/name"
         android:inputType="textNoSuggestions"
         android:textAlignment="center"
         android:visibility="invisible"
@@ -39,7 +39,7 @@
         android:layout_width="190dp"
         android:layout_height="100dp"
         android:onClick="onClickDatabase2"
-        android:text="@string/backtodb"
+        android:text="@string/go_to_database"
         android:textAlignment="center" />
 
 </LinearLayout>
