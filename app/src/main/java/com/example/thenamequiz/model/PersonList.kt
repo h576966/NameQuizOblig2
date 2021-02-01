@@ -7,9 +7,8 @@ import java.util.*
 
 
 class PersonList : Application(){
-   lateinit var data: ArrayList<Person>
 
-
+    var data = ArrayList<Person>()
 
     override fun onCreate() {
         super.onCreate()

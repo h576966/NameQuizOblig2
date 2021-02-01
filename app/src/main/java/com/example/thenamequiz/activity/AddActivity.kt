@@ -7,16 +7,10 @@ import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.databinding.ActivityAddBinding
-
 import android.widget.ImageView
-
 import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.person_layout.*
 
-
-import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 
 import android.widget.Toast

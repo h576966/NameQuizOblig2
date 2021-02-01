@@ -43,7 +43,7 @@ class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<Pe
 
     }
 
-    fun removeKitten(view: View, position: Int){
+    fun removePerson(view: View, position: Int){
         personList.removeAt(position)
         notifyItemRemoved(position)
     }
