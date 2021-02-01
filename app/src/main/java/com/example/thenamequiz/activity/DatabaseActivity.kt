@@ -1,16 +1,11 @@
 package com.example.thenamequiz.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.R
 import com.example.thenamequiz.adapter.PersonAdapter
-import com.example.thenamequiz.databinding.ActivityDatabaseBinding
 import com.example.thenamequiz.model.PersonList
 
 
@@ -20,7 +15,7 @@ class DbActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_database)
-        val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 

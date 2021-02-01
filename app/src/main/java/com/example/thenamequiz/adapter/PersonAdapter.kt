@@ -1,6 +1,6 @@
 package com.example.thenamequiz.adapter
 
-import android.R
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +8,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.thenamequiz.R
 import com.example.thenamequiz.model.Person
-import java.util.*
 
 
 class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
@@ -22,7 +22,7 @@ class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<Pe
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.person_view, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.person_layout, parent, false)
         return ViewHolder(v)
     }
 

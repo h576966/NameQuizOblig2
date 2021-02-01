@@ -8,19 +8,19 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.databinding.ActivityAddBinding
 
-import android.widget.ImageView;
+import android.widget.ImageView
 
 
-import android.provider.MediaStore;
+import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View;
+import android.view.View
 
-import android.widget.Toast;
+import android.widget.Toast
 import com.example.thenamequiz.R
 
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.IOException
+import java.util.ArrayList
 
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
@@ -36,7 +36,7 @@ class AddActivity : AppCompatActivity() {
 
 
 
-    public fun onClickDatabase2(view: View){
+    fun onClickDatabase2(view: View){
         val database = Intent(this, DbActivity::class.java)
 
         startActivity(database)

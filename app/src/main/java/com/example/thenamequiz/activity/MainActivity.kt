@@ -20,19 +20,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    public fun onClickDatabase(view: View){
+    fun onClickDatabase(view: View){
         val database = Intent(this, DatabaseActivity::class.java)
 
         startActivity(database)
     }
 
-    public fun onClickAdd(view: View){
+    fun onClickAdd(view: View){
         val addActivity = Intent(this, AddActivity::class.java)
 
         startActivity(addActivity)
     }
 
-    public fun onClickQuiz(view: View){
+    fun onClickQuiz(view: View){
         val quiz = Intent(this, QuizActivity::class.java)
 
         startActivity(quiz)

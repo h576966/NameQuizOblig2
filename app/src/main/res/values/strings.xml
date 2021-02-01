@@ -47,4 +47,7 @@
     <string name="submit_answer">Submit answer</string>
     <string name="restart_quiz">Restart quiz!</string>
     <string name="todo">TODO</string>
+    <string name="person">Person</string>
+    <string name="deletepic">deletePic</string>
+    <string name="imageviewname">imageViewName</string>
 </resources>
