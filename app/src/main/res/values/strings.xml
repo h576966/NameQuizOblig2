@@ -22,12 +22,12 @@
     <string name="image">Image</string>
     <string name="score">Score</string>
     <string name="enter_name">Enter name:</string>
-    <string name="quiz">Quiz</string>
+    <string name="quiz2">Quiz</string>
     <string name="hint2">hint2</string>
     <string name="button_photo">button Photo</string>
     <string name="buttonphoto">buttonPhoto</string>
     <string name="backtodb">backToDb</string>
-    <string name="addactivity">addActivity</string>
+    <string name="addActivity">addActivity</string>
     <string name="save_pref_name">Save pref name</string>
     <string name="change_pref_name">Change pref name</string>
     <string name="back_to_menu">Back to menu</string>
