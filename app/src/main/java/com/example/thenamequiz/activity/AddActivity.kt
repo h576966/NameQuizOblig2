@@ -39,14 +39,7 @@ class AddActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.settings){
-            Intent(this, NameActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
 
     public fun onClickDatabase2(view: View){
         val database = Intent(this, DbActivity::class.java)

@@ -36,13 +36,6 @@ class DbActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.settings){
-            Intent(this, setNameActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
 
 }

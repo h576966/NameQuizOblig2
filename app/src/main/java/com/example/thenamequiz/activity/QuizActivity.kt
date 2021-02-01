@@ -49,14 +49,7 @@ class QuizActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.settings){
-            Intent(this, NameActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
 
     private fun runRound(){
         val person = quiz.pickPerson()
