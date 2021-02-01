@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
@@ -50,7 +51,7 @@ class QuizActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.settings){
-            Intent(this, setNameActivity::class.java).also {
+            Intent(this, NameActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -58,7 +59,7 @@ class QuizActivity : AppCompatActivity() {
     }
 
     private fun runRound(){
-        val person = quiz.pickKitten()
+        val person = quiz.pickPerson()
         imageViewQuiz.setImageBitmap(person.image)
         currentPerson = person
     }
