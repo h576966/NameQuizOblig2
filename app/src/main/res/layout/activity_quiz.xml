@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.QuizActivity">
+    android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="0dp"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:text="@string/quiz"
+        android:textAlignment="center"
+        android:textSize="40sp"/>
 
-        <TextView
-            android:id="@+id/quizScore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="@string/score"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/imageViewQuiz"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
 
-        <ImageView
-            android:id="@+id/quizImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:contentDescription="@string/enter_name"
-            tools:srcCompat="@tools:sample/avatars" />
+    <TextView
+        android:id="@+id/yourScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:text="Your score"/>
 
-        <EditText
-            android:id="@+id/namePassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/enter_name"
-            android:importantForAccessibility="no"
-            android:importantForAutofill="no"
-            android:inputType="textPassword" />
+    <TextView
+        android:id="@+id/textKittens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/inputAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:hint="@string/hint"/>
 
+    <Button
+        android:textAlignment="center"
+        android:id="@+id/submitAns"
+        android:layout_width="190dp"
+        android:layout_height="100dp"
+        android:text="@string/SubmitAnswer"
+        android:onClick="submitAnswer"/>
 
+    <Button
+        android:id="@+id/restartBtn"
+        android:textAlignment="center"
+        android:layout_width="190dp"
+        android:layout_height="100dp"
+        android:text="@string/restartBtn"
+        android:visibility="invisible"
+        android:onClick="restart"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -2,76 +2,47 @@ package com.example.thenamequiz.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.thenamequiz.R
 import com.example.thenamequiz.adapter.PersonAdapter
 import com.example.thenamequiz.databinding.ActivityDatabaseBinding
 import com.example.thenamequiz.model.PersonList
 
 
-class DatabaseActivity : AppCompatActivity() {
-    private var recyclerView: RecyclerView? = null
-    private var adapter: PersonAdapter? = null
-    private val PersonList: PersonList? = null
+class DbActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityDatabaseBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        val personList = applicationContext as PersonList
+        setContentView(R.layout.activity_database)
+        val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
 
-        recyclerView = binding.personList
-        //addButton = binding.addbutton
+        recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        binding.addbutton1.setOnClickListener {
-            val intent = Intent(this, DatabaseActivity::class.java)
-            startActivity(intent)
-        }
+        val person = (application as PersonList).data
 
-        // Create recycleView-adapter and send the questions as input.
-        if (PersonList != null) {
-            val PersonList = PersonList(this)
+        val adapter = PersonAdapter(person)
 
-            adapter = PersonAdapter(PersonList.getPersonList())
-        }
-
-        binding.addbutton1.setOnClickListener{
-            val intent = Intent(this, AddActivity::class.java)
-            startActivity(intent)
-        }
-       recyclerView!!.setAdapter(adapter)
-
-        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-        recyclerView!!.addItemDecoration(dividerItemDecoration)
-        val linearLayoutManager = LinearLayoutManager(this)
-        recyclerView!!.layoutManager = linearLayoutManager
-
-        //override onActivityResult
-
-
-
-       /* val itemTouchHelper = ItemTouchHelper(simpleCallback)
-        itemTouchHelper.attachToRecyclerView(recyclerView)
-
-        val simpleCallback = ItemTouchHelper(
-                object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN,
-                        ItemTouchHelper.LEFT) {
-
-                    override fun onMove(recyclerView: RecyclerView,
-                               viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-                        return false
-                    }
-
-                    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                        Shared!!.getPersons()?.removeAt(viewHolder.adapterPosition)
-                        adapter?.notifyDataSetChanged()
-                    }
-
-                })*/
-
+        recyclerView.adapter = adapter
     }
-}
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.settings){
+            Intent(this, setNameActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+}

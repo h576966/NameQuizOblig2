@@ -3,6 +3,10 @@ package com.example.thenamequiz.model
 import android.graphics.Bitmap
 
 
+class Person(val name: String, val image: Bitmap)
+
+
+/*
 class Person(name: String, image: Bitmap) {
 
     private var name: String? = null
@@ -28,9 +32,4 @@ class Person(name: String, image: Bitmap) {
 
     fun setImage(image: Bitmap?) {
         this.image = image
-    }
-
-
-
-
-}
+   */

@@ -2,7 +2,11 @@ package com.example.thenamequiz.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.thenamequiz.R
 import com.example.thenamequiz.databinding.ActivityMainBinding
 
 
@@ -10,27 +14,40 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-       // val shared = applicationContext as Shared
+    }
 
-        binding.buttonQuiz.setOnClickListener{
-            val intent = Intent(this, QuizActivity::class.java)
-            startActivity(intent)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.settings){
+            Intent(this, setNameActivity::class.java).also {
+                startActivity(it)
+            }
         }
-        binding.buttonDatabase.setOnClickListener{
-            val intent = Intent(this, DatabaseActivity::class.java)
-            startActivity(intent)
-        }
+        return super.onOptionsItemSelected(item)
+    }
 
-        binding.buttonAdd.setOnClickListener{
-            val intent = Intent(this, AddActivity::class.java)
-            startActivity(intent)
-        }
+    public fun onClickDatabase(view: View){
+        val database = Intent(this, DatabaseActivity::class.java)
 
+        startActivity(database)
+    }
 
+    public fun onClickAdd(view: View){
+        val addActivity = Intent(this, AddActivity::class.java)
+
+        startActivity(addActivity)
+    }
+
+    public fun onClickQuiz(view: View){
+        val quiz = Intent(this, QuizActivity::class.java)
+
+        startActivity(quiz)
     }
 }
 

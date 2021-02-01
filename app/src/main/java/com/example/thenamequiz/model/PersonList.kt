@@ -1,51 +1,19 @@
 package com.example.thenamequiz.model
 
 import android.app.Application
-import android.graphics.Bitmap
-import com.example.thenamequiz.activity.AddActivity
-import java.util.ArrayList;
+import android.graphics.BitmapFactory
+import com.example.thenamequiz.R
+import java.util.*
 
 
-class PersonList(addActivity: AddActivity) : Application() {
+class PersonList : Application(){
+    var personList = ArrayList<Person>()
 
-
-   //ny
-   private var personList: ArrayList<Person>? = null
-
-    fun PersonList() {
-        personList = ArrayList<Person>()
+    override fun onCreate() {
+        super.onCreate()
+        personList.add(Person("Hassan", BitmapFactory.decodeResource(resources, R.drawable.hassan)))
+        personList.add(Person("Peter", BitmapFactory.decodeResource(resources, R.drawable.peter)))
+        personList.add(Person("Sivert", BitmapFactory.decodeResource(resources, R.drawable.sivert)))
     }
-
-    fun addPerson(name:String, image:Bitmap) {
-        var person = Person(name, image)
-
-        personList?.add(person)
-    }
-    //fun addPerson(question: Person?) {
-    //    this.persons?.add(Person())
-   // }
-
-    public fun getPersonList(): ArrayList<Person>?  {
-        return personList
-    }
-
-    fun setPersonList(PersonList: ArrayList<Person>?) {
-        this.personList = PersonList
-    }
-
-
-   /* // gammel
-    private var persons: ArrayList<Person>? = null
-
-    fun SharedObject() {
-        this.persons = ArrayList()
-    }
-    fun getPersons(): ArrayList<Person>? {
-        return persons
-    }
-    fun addPersons(question: Person?) {
-        this.persons?.add(Person())
-    }*/
-
-
 }
+
