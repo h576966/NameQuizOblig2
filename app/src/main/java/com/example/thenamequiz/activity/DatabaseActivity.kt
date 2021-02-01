@@ -9,7 +9,7 @@ import com.example.thenamequiz.adapter.PersonAdapter
 import com.example.thenamequiz.model.PersonList
 
 
-class DbActivity : AppCompatActivity() {
+class DatabaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,27 +1,16 @@
 package com.example.thenamequiz.activity
 
+
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.thenamequiz.databinding.ActivityAddBinding
-
-import android.widget.ImageView
-
-
-import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
-
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.R
-
-import java.io.IOException
-import java.util.ArrayList
-
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
 
