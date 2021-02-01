@@ -44,11 +44,6 @@ class QuizActivity : AppCompatActivity() {
         runRound()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
 
 
     private fun runRound(){

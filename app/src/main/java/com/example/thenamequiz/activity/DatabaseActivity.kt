@@ -31,10 +31,7 @@ class DbActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+
 
 
 

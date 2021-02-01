@@ -18,19 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.settings){
-            Intent(this, NameActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
     public fun onClickDatabase(view: View){
         val database = Intent(this, DatabaseActivity::class.java)
