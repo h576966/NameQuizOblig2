@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheNameQuiz">
-        <activity android:name=".activity.SettingsActivity"></activity>
-        <activity android:name=".activity.NameActivity" />
+        <activity android:name=".activity.SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".activity.MainActivity"
+            ></activity>
+        <activity android:name=".activity.NameActivity"
+            android:label="Names"
+            android:parentActivityName=".activity.MainActivity"/>
         <activity android:name=".activity.Quiz" />
         <activity
             android:name=".activity.AddActivity"
@@ -18,7 +23,7 @@
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/Theme.TheNameQuiz.NoActionBar" />
         <activity
-            android:name=".activity.DatabaseActivity"
+            android:name=".activity.DbActivity"
             android:label="Database"
             android:parentActivityName=".activity.MainActivity" />
         <activity
