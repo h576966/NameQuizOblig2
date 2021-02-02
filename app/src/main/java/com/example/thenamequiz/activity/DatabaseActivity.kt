@@ -1,5 +1,6 @@
 package com.example.thenamequiz.activity
 
+import android.app.Application
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,9 @@ import com.example.thenamequiz.model.PersonList
 import java.util.ArrayList;
 
 
-class DatabaseActivity : AppCompatActivity() {
+class DatabaseActivity : AppCompatActivity()  {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +24,10 @@ class DatabaseActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        val person = PersonList().data
+        val person = (application as PersonList).data
         val adapter = PersonAdapter(person)
 
-        person.add(Person("Volker", BitmapFactory.decodeResource(resources, R.drawable.volker)))
+
         recyclerView.adapter = adapter
     }
 

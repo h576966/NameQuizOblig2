@@ -21,6 +21,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quiz.*
 
@@ -33,7 +34,10 @@ class QuizActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
-        data = PersonList().data
+        data = (application as PersonList).data
+        data.add(Person("Volker", BitmapFactory.decodeResource(resources, R.drawable.volker)))
+
+
         quiz = Quiz(data)
 
         inputAnswer.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
