@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheNameQuiz"
         android:name=".model.PersonList">
-        <activity android:name=".activity.Quiz"
+        <activity
+            android:name=".activity.Quiz"
+            android:label="Quiz"
+            android:parentActivityName=".activity.MainActivity"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".activity.AddActivity"
