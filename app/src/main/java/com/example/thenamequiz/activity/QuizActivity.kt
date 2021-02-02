@@ -35,8 +35,6 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
         data = (application as PersonList).data
-        data.add(Person("Volker", BitmapFactory.decodeResource(resources, R.drawable.volker)))
-
 
         quiz = Quiz(data)
 
