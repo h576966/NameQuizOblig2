@@ -21,11 +21,8 @@ class AddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_add)
     }
-
-
 
     fun onClickDatabase2(view: View){
         val database = Intent(this, DatabaseActivity::class.java)

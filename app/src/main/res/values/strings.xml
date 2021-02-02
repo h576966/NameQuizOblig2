@@ -51,4 +51,5 @@
     <string name="deletepic">deletePic</string>
     <string name="imageviewname">imageViewName</string>
     <string name="imageviewquiz">imageViewQuiz</string>
+    <string name="add2">Add</string>
 </resources>

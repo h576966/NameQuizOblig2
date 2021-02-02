@@ -49,7 +49,7 @@
         android:backgroundTint="#85ECDC"
         android:gravity="center_horizontal"
         android:onClick="onClickAdd"
-        android:text="@string/add_activity"
+        android:text="@string/add"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="3dp"
