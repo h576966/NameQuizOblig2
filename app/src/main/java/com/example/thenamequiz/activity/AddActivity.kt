@@ -1,23 +1,17 @@
 package com.example.thenamequiz.activity
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.thenamequiz.databinding.ActivityAddBinding
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_add.*
-import kotlinx.android.synthetic.main.person_layout.*
 
 import android.view.View
 
 import android.widget.Toast
 import com.example.thenamequiz.R
-
-import java.io.IOException
-import java.util.ArrayList
 
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
@@ -56,7 +50,7 @@ class AddActivity : AppCompatActivity() {
         Toast.makeText(this, "${inputText.text} added to database!", Toast.LENGTH_SHORT).show()
         inputText.setText("")
         imageView.setImageDrawable(null)
-        restart(view)
+        restart()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -76,7 +70,7 @@ class AddActivity : AppCompatActivity() {
         }
     }
 
-    fun restart(view: View){
+    fun restart() {
         buttonPhoto.visibility = View.VISIBLE
         inputText.visibility = View.INVISIBLE
         addActivityButton.visibility = View.INVISIBLE

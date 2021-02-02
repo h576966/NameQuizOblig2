@@ -4,6 +4,7 @@ import android.app.Application
 import android.graphics.BitmapFactory
 import com.example.thenamequiz.R
 import java.util.*
+import java.util.ArrayList;
 
 
 class PersonList : Application(){

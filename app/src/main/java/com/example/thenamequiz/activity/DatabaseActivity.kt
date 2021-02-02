@@ -9,6 +9,7 @@ import com.example.thenamequiz.R
 import com.example.thenamequiz.adapter.PersonAdapter
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
+import java.util.ArrayList;
 
 
 class DatabaseActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class DatabaseActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        val person = (application as PersonList).data
+        val person = PersonList().data
         val adapter = PersonAdapter(person)
 
         person.add(Person("Volker", BitmapFactory.decodeResource(resources, R.drawable.volker)))
