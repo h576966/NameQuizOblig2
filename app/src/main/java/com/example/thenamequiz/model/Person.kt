@@ -7,16 +7,7 @@ class Person(val name: String, val image: Bitmap)
 
 
 /*
-class Person(name: String, image: Bitmap) {
 
-    private var name: String? = null
-    private var image: Bitmap? = null
-
-
-    fun Person(name: String?, image: Bitmap?) {
-        this.name = name
-        this.image = image
-    }
 
     fun getName(): String? {
         return name

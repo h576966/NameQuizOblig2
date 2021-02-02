@@ -50,4 +50,5 @@
     <string name="person">Person</string>
     <string name="deletepic">deletePic</string>
     <string name="imageviewname">imageViewName</string>
+    <string name="imageviewquiz">imageViewQuiz</string>
 </resources>

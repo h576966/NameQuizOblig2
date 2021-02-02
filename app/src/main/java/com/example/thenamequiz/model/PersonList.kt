@@ -7,7 +7,6 @@ import java.util.*
 
 
 class PersonList : Application(){
-
     var data = ArrayList<Person>()
 
     override fun onCreate() {
