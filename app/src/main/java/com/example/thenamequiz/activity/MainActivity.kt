@@ -2,6 +2,7 @@ package com.example.thenamequiz.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.R
 
@@ -13,19 +14,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun onClickDatabase() {
+    fun onClickDatabase(view: View) {
         val database = Intent(this, DatabaseActivity::class.java)
 
         startActivity(database)
     }
 
-    fun onClickAdd() {
+    fun onClickAdd(view: View) {
         val addActivity = Intent(this, AddActivity::class.java)
 
         startActivity(addActivity)
     }
 
-    fun onClickQuiz() {
+    fun onClickQuiz(view: View) {
         val quiz = Intent(this, QuizActivity::class.java)
 
         startActivity(quiz)
