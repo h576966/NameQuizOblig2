@@ -1,8 +1,4 @@
-package com.example.thenamequiz.activity
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.thenamequiz.model.Person
+package com.example.thenamequiz.model
 
 class Quiz (data: ArrayList<Person>){
 

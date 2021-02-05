@@ -1,29 +1,19 @@
 package com.example.thenamequiz.activity
 
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
 import android.view.KeyEvent
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.R
-import com.example.thenamequiz.databinding.ActivityQuizBinding
 import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonList
-import java.net.PasswordAuthentication
-import java.util.*
-import kotlin.collections.ArrayList
-
-import android.content.Context
-import android.graphics.BitmapFactory
+import com.example.thenamequiz.model.Quiz
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quiz.*
+import java.util.*
+
 
 class QuizActivity : AppCompatActivity() {
 
@@ -35,12 +25,11 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
         data = (application as PersonList).data
-
         quiz = Quiz(data)
 
         inputAnswer.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
-            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP){
-                if (!quiz.done){
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                if (!quiz.done) {
                     submitAnswer(inputAnswer)
                 }
                 return@OnKeyListener true
@@ -62,7 +51,7 @@ class QuizActivity : AppCompatActivity() {
         quiz = Quiz(data)
         restartBtn.visibility = View.INVISIBLE
         submitAns.visibility = View.VISIBLE
-        textPerson.text = "0"
+        //textPerson.text = "0"
         yourScore.text = "0"
         runRound()
 
@@ -70,18 +59,25 @@ class QuizActivity : AppCompatActivity() {
 
     fun submitAnswer(view: View){
         val isCorrect = quiz.answer(inputAnswer.text.toString())
-        textPerson.text = quiz.attempts.toString()
-        yourScore.text = quiz.score.toString()
+        //textPerson.text = quiz.attempts.toString()
+        yourScore.text = quiz.score.toString() + "/" + quiz.attempts.toString()
         displayFeedback(isCorrect)
         inputAnswer.setText("")
 
         if (!quiz.isDone()){
             runRound()
         }else{
-            Toast.makeText(this, "Yee-haaw, you've done it!", Toast.LENGTH_SHORT).show()
+            var extraText =""
+            if (quiz.score/quiz.attempts>=0.67){
+                extraText="Good Job!!!"
+            }else{ extraText="Not great, you need some practice."}
+
+            var scoreText = "Quiz completed, your score was " + quiz.score.toString()+ " out of "+ quiz.attempts.toString() + " attempts " + extraText
+            val toast = Toast.makeText(this, scoreText, Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
             submitAns.visibility = View.INVISIBLE
             restartBtn.visibility = View.VISIBLE
-
 
         }
     }

@@ -12,7 +12,7 @@
         android:theme="@style/Theme.TheNameQuiz"
         android:name=".model.PersonList">
         <activity
-            android:name=".activity.Quiz"
+            android:name=".model.Quiz"
             android:label="Quiz"
             android:parentActivityName=".activity.MainActivity"
             tools:ignore="Instantiatable" />

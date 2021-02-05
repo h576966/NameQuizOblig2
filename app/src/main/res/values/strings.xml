@@ -52,4 +52,6 @@
     <string name="imageviewname">imageViewName</string>
     <string name="imageviewquiz">imageViewQuiz</string>
     <string name="add2">Add</string>
+    <string name="delete">Delete</string>
+    <string name="delete2">Delete</string>
 </resources>

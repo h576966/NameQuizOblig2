@@ -50,6 +50,8 @@ class AddActivity : AppCompatActivity() {
         restart()
     }
 
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val imageView = findViewById<ImageView>(R.id.imageView)
