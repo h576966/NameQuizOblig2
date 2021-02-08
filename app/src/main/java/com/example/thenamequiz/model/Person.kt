@@ -6,9 +6,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Person(var name: String, var image: Bitmap){
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name="id", index = true)
-    val id: Long = 0L
+class Person(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
+    val name: String,
+    val image: Bitmap)
 
-}
 
