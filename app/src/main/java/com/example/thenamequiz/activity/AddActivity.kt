@@ -19,7 +19,7 @@ import com.example.thenamequiz.model.PersonRoomDatabase
 
 
 class AddActivity : AppCompatActivity() {
-    val database: PersonRoomDatabase // Global variable
+   // val database: PersonRoomDatabase // Global variable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,6 @@ class AddActivity : AppCompatActivity() {
         startActivity(database)
     }
 
-    val REQUEST_IMAGE_CAPTURE = 1
     val REQUEST_IMAGE_PICK = 2
 
     fun pickPhoto(view: View) {
