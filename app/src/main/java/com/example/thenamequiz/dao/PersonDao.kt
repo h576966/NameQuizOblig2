@@ -9,7 +9,7 @@ interface PersonDao {
     @Query("Select * FROM person")
     fun getAll(): ArrayList<Person>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg persons: Person) //check persons
 
     @Delete
