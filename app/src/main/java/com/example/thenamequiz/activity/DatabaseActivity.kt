@@ -1,17 +1,11 @@
 package com.example.thenamequiz.activity
 
-import android.app.Application
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.R
 import com.example.thenamequiz.adapter.PersonAdapter
-import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
-import java.util.ArrayList;
-
 
 class DatabaseActivity : AppCompatActivity()  {
 

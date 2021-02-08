@@ -15,7 +15,6 @@ import android.widget.Toast
 import com.example.thenamequiz.R
 
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
 import com.example.thenamequiz.model.PersonRoomDatabase
 
 

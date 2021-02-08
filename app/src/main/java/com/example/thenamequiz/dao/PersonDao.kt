@@ -14,4 +14,7 @@ interface PersonDao {
 
     @Delete
     fun delete(person: Person)
+
+    @Query("SELECT * FROM PERSON WHERE name LIKE :name" )
+    fun findByName(name: String):Person
 }

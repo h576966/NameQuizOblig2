@@ -1,20 +1,15 @@
 package com.example.thenamequiz.adapter
 
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.R
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
-import kotlinx.android.synthetic.main.activity_add.*
 
 
 class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
