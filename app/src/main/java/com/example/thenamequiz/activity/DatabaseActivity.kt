@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.R
 import com.example.thenamequiz.adapter.PersonAdapter
+import com.example.thenamequiz.model.PersonRoomDatabase
 
 class DatabaseActivity : AppCompatActivity()  {
 
@@ -18,7 +19,8 @@ class DatabaseActivity : AppCompatActivity()  {
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        val person = (application as PersonList).data
+        val data = PersonRoomDatabase(this)
+        val person = MainActivity().data
         val adapter = PersonAdapter(person)
 
 

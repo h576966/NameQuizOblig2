@@ -11,11 +11,6 @@ import com.example.thenamequiz.model.PersonRoomDatabase
 
 class MainActivity : AppCompatActivity() {
 
-    val db = Room.databaseBuilder(
-        applicationContext,
-        PersonRoomDatabase::class.java, "person_list.db"
-    ).build() //this needs to be dubblechecked later
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
