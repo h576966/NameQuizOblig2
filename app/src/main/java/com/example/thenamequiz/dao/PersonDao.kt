@@ -1,5 +1,5 @@
 package com.example.thenamequiz.dao
-import androidx.lifecycle.LiveData
+ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.thenamequiz.model.Person
 
@@ -19,6 +19,12 @@ interface PersonDao {
     @Delete
     fun delete(person: Person)
 
-    @Query("SELECT * FROM person_table WHERE name LIKE :name" )
+    @Query("SELECT * FROM person_table WHERE name LIKE :name")
     fun findByName(name: String):Person
+
+    @Query("SELECT * FROM person_table WHERE name = :name")
+    fun findName(name: String): List<Person>
+
+    @Query("DELETE FROM person_table WHERE name = :name")
+    fun deletePerson(name: String)
 }
