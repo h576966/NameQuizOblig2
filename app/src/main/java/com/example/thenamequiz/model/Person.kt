@@ -6,7 +6,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "person")
+@Entity(tableName = "person_table")
 data class Person(
     @PrimaryKey //(autoGenerate = true)
     @NonNull
