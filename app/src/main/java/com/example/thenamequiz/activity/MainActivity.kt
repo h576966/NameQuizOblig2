@@ -14,9 +14,6 @@ import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
-    private val personViewModel: PersonViewModel by viewModels {
-        PersonViewModelFactory((application as PersonApplication).repository)
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
