@@ -8,8 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.thenamequiz.R
-import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonRoomDatabase
+import com.example.thenamequiz.model.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
