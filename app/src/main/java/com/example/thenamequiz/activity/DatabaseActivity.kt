@@ -1,5 +1,6 @@
 package com.example.thenamequiz.activity
 
+import android.app.Activity
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -16,9 +17,29 @@ import kotlinx.coroutines.launch
 
 
 class DatabaseActivity : AppCompatActivity()  {
+    private val newWordActivityRequestCode = 1
+
+
     private val personViewModel: PersonViewModel by viewModels {
         PersonViewModelFactory((application as PersonApplication).repository)
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
+            data?.getStringExtra(NewWordActivity.EXTRA_REPLY)?.let {
+                val word = Word(it)
+                wordViewModel.insert(word)
+            }
+        } else {
+            Toast.makeText(
+                applicationContext,
+                R.string.empty_not_saved,
+                Toast.LENGTH_LONG).show()
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +49,6 @@ class DatabaseActivity : AppCompatActivity()  {
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
 
-        private val newWordActivityRequestCode = 1
         val person = PersonRoomDatabase(this)
         val adapter = PersonAdapter(person)
 
