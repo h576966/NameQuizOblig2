@@ -1,12 +1,16 @@
 package com.example.thenamequiz.activity
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.thenamequiz.R
+import com.example.thenamequiz.model.Person
 import com.example.thenamequiz.model.PersonRoomDatabase
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {

@@ -3,7 +3,6 @@ package com.example.thenamequiz.activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import android.os.AsyncTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
@@ -15,11 +14,12 @@ import android.widget.Toast
 import com.example.thenamequiz.R
 
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonRoomDatabase
 
 
 class AddActivity : AppCompatActivity() {
    // val database: PersonRoomDatabase // Global variable
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,7 @@ class AddActivity : AppCompatActivity() {
         restart()
     }
 
-    fun saveToDatabase(person: Person) {
+   /* fun saveToDatabase(person: Person) {
     class SaveToDatabase : AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... voids)
@@ -62,7 +62,7 @@ class AddActivity : AppCompatActivity() {
     }
     std: SaveToDatabase = SaveToDatabase()
     std.execute()
-}
+}*/
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
