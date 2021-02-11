@@ -6,11 +6,15 @@ import com.example.thenamequiz.model.Person
 
 @Dao
 interface PersonDao {
-    @Query("Select * FROM person")
-    fun getAll(): ArrayList<Person>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg persons: Person) //check persons
+    fun insertPerson(person: Person)
+
+    @Query("Select * FROM person")
+    fun getAll(): List<Person>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(vararg person: Person) //check persons
 
     @Delete
     fun delete(person: Person)
