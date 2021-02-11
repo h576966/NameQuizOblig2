@@ -1,9 +1,6 @@
 package com.example.thenamequiz.model
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
 class PersonViewModel (private val repository: PersonRepository) : ViewModel() {
@@ -11,7 +8,7 @@ class PersonViewModel (private val repository: PersonRepository) : ViewModel() {
 
 
     fun insert(person: Person) = viewModelScope.launch {
-        repository.insert(person)
+        repository.insertPerson(person)
         }
     }
 
