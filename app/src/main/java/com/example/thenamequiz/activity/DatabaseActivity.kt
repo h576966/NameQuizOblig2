@@ -25,19 +25,7 @@ class DatabaseActivity : AppCompatActivity()  {
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        val db = Room.databaseBuilder(
-            applicationContext,
-            PersonRoomDatabase::class.java, "todo-list.db"
-        ).build()
 
-        GlobalScope.launch {
-            db.personDao().insertAll(Person("Hassan", BitmapFactory.decodeResource(resources, R.drawable.hassan))
-            db = db.personDao().getAll()
-
-            data?.forEach {
-                println(it)
-            }
-        }
 
         val person = PersonRoomDatabase(this)
         val adapter = PersonAdapter(person)
