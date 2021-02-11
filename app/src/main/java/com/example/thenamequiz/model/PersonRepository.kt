@@ -10,6 +10,45 @@ import androidx.lifecycle.LiveData
 class PersonRepository(application: Application) {
     val searchResults = MutableLiveData<List<Person>>()
 
+    // Referer til PersonDatabase slik at vi kan bruke DAO kommandoer som insert, delete osv.
+    private var personDao: PersonDao?
+
+    init {
+        val db: PersonRoomDatabase? =
+                PersonRoomDatabase.getDatabase(application)
+        personDao = db?.personDao()
+    }
+
+    //Lager en variabel som vi bruker til å hente listen med personer, kobles til recyclerview
+    val allProducts: LiveData<List<Person>>?
+
+    init {
+        val db: PersonRoomDatabase? =
+                PersonRoomDatabase.getDatabase(application)
+        personDao = db?.personDao()
+
+        allProducts = personDao?.getAll()
+    }
+
+
+    fun insertPerson(newperson: Person) {
+        val task = InsertAsyncTask(personDao)
+        task.execute(newperson)
+    }
+
+    fun deletePerson(name: String) {
+        val task = DeleteAsyncTask(personDao)
+        task.execute(name)
+    }
+
+    fun findPerson(name: String) {
+        val task = QueryAsyncTask(personDao)
+        task.delegate = this
+        task.execute(name)
+    }
+
+
+
     fun asyncFinished(results: List<Person>) {
         searchResults.value = results
     }

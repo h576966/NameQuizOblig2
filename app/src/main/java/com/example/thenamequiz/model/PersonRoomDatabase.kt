@@ -6,33 +6,28 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.thenamequiz.dao.PersonDao
 
-@Database(entities = arrayOf(Person::class), version = 1, exportSchema = false)
+@Database(entities = [(Person::class)], version = 1)
 
 abstract class PersonRoomDatabase: RoomDatabase() {
-    abstract val personDao: PersonDao
+    abstract fun personDao(): PersonDao
 
     companion object {
 
-        @Volatile
         private var INSTANCE: PersonRoomDatabase? = null
 
-        fun getInstance(context: Context): PersonRoomDatabase {
-            synchronized(this) {
-                var instance = INSTANCE
-
-
-                if (instance == null) {
-                    instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            PersonRoomDatabase::class.java, "person_database")
-
-                            .fallbackToDestructiveMigration()
-                            .build()
-                    INSTANCE = instance
+        internal fun getDatabase(context: Context): PersonRoomDatabase? {
+            if (INSTANCE == null) {
+                synchronized(PersonRoomDatabase::class.java) {
+                    if (INSTANCE == null) {
+                        INSTANCE =
+                                Room.databaseBuilder<PersonRoomDatabase>(
+                                        context.applicationContext,
+                                        PersonRoomDatabase::class.java,
+                                        "person_database").build()
+                    }
                 }
-                return instance
             }
-
+            return INSTANCE
         }
     }
 }
