@@ -32,7 +32,7 @@ class DatabaseActivity : AppCompatActivity()  {
 
         GlobalScope.launch {
             db.personDao().insertAll(Person("Hassan", BitmapFactory.decodeResource(resources, R.drawable.hassan))
-            data = db.personDao().getAll()
+            db = db.personDao().getAll()
 
             data?.forEach {
                 println(it)

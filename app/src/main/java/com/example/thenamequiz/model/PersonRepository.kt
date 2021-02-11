@@ -20,15 +20,19 @@ class PersonRepository(application: Application) {
     }
 
     //Lager en variabel som vi bruker til å hente listen med personer, kobles til recyclerview
-    val allProducts: LiveData<List<Person>>?
+    val allPersons: LiveData<List<Person>>?
 
     init {
         val db: PersonRoomDatabase? =
                 PersonRoomDatabase.getDatabase(application)
         personDao = db?.personDao()
 
-        allProducts = personDao?.getAll()
+        allPersons = personDao?.getAll()
     }
+
+
+
+
 
 
     fun insertPerson(newperson: Person) {
