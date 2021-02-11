@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class PersonViewModel (private val repository: PersonRepository) : ViewModel() {
-    val allPerson: LiveData<List<Person>> = repository.allPersons.asLiveData()
+    val allPersons: LiveData<List<Person>> = repository.allPersons.asLiveData()
 
 
     fun insert(person: Person) = viewModelScope.launch {
