@@ -11,7 +11,7 @@ data class Person(
     @PrimaryKey //(autoGenerate = true)
     @NonNull
     //val id: Int,
-    val name: String,
-    @ColumnInfo(name="content")val image: Bitmap)
+    @ColumnInfo(name="name")val name: String,
+    @ColumnInfo(name="image")val image: Bitmap)
 
 
