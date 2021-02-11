@@ -25,6 +25,10 @@ abstract class PersonRoomDatabase: RoomDatabase() {
                     instance = Room.databaseBuilder(
                                     context.applicationContext,
                                     PersonRoomDatabase::class.java, "person_database")
+
+                            .fallbackToDestructiveMigration()
+                            .build()
+                    INSTANCE= instance
                 }
                 return instance
             }
