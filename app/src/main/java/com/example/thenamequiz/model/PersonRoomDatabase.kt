@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.thenamequiz.dao.PersonDao
+import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = [(Person::class)], version = 1)
 
@@ -15,7 +16,7 @@ abstract class PersonRoomDatabase: RoomDatabase() {
 
         private var INSTANCE: PersonRoomDatabase? = null
 
-        internal fun getDatabase(context: Context): PersonRoomDatabase? {
+        internal fun getDatabase(context: Context, applicationScope: CoroutineScope): PersonRoomDatabase? {
             if (INSTANCE == null) {
                 synchronized(PersonRoomDatabase::class.java) {
                     if (INSTANCE == null) {

@@ -2,6 +2,7 @@ package com.example.thenamequiz.dao
  import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.thenamequiz.model.Person
+ import kotlinx.coroutines.flow.Flow
 
 
 @Dao
@@ -11,7 +12,7 @@ interface PersonDao {
     fun insertPerson(person: Person)
 
     @Query("Select * FROM person_table")
-    fun getAll(): LiveData<List<Person>>
+    fun getAll(): Flow<List<Person>> //LiveData -> Flow
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg person: Person) //check persons
