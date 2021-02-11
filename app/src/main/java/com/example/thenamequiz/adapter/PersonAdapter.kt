@@ -1,6 +1,7 @@
 package com.example.thenamequiz.adapter
 
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,8 @@ import com.example.thenamequiz.R
 import com.example.thenamequiz.model.Person
 
 
-class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+class PersonAdapter(context: Context) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+    private var persons = emptyList<Person>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageViewName = itemView.findViewById(R.id.imageViewName) as ImageView
@@ -26,11 +28,11 @@ class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<Pe
     }
 
     override fun getItemCount(): Int {
-        return personList.size
+        return persons.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val person: Person = personList[position]
+        val person: Person = persons[position] //check if correct
         holder.imageViewName.setImageBitmap(person.image)
         holder.textViewName.text = person.name
         holder.delButton.setOnClickListener(){
