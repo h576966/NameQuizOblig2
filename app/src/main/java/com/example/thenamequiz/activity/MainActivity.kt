@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.thenamequiz.R
@@ -14,6 +15,9 @@ import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
+    private val personViewModel: PersonViewModel by viewModels {
+        PersonViewModelFactory((application as PersonApplication).repository)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
