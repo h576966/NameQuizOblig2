@@ -14,6 +14,7 @@ import android.widget.Toast
 import com.example.thenamequiz.R
 
 import com.example.thenamequiz.model.Person
+import com.example.thenamequiz.model.PersonApplication
 
 
 class AddActivity : AppCompatActivity() {
@@ -43,7 +44,7 @@ class AddActivity : AppCompatActivity() {
     fun addPerson(view: View) {
         val bitmap: Bitmap = (imageView.drawable as BitmapDrawable).bitmap
         val person = Person(inputText.text.toString(), bitmap)
-        val data = (application as PersonList).data
+        val data = (application as PersonApplication).database
         data.add(person)
         Toast.makeText(this, "${inputText.text} added to database!", Toast.LENGTH_SHORT).show()
         inputText.setText("")
