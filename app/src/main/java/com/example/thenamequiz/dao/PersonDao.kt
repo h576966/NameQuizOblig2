@@ -1,28 +1,34 @@
 package com.example.thenamequiz.dao
-import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+ import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.thenamequiz.model.Person
+ import kotlinx.coroutines.flow.Flow
 
 
 @Dao
 interface PersonDao {
-    @Query("SELECT * FROM person ORDER BY name")
-    fun getAll(): LiveData<List<Person>>
-
-    @Query("SELECT * FROM persons WHERE id = :personId")
-    fun getPerson(personId: String): LiveData<Person>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(person: Person)
+    suspend fun addPerson(person: Person)
+
+    @Query("Select * FROM person_table")
+    suspend fun getAll(): Flow<List<Person>> //LiveData -> Flow
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(persons: List<Person>)
+    suspend fun addAll(vararg person: Person) //check persons
 
-    @Query("DELETE FROM persons WHERE id = :personId")
-    suspend fun delete(personId: String)
-}
+    @Delete
+    suspend fun delete(person: Person)
 
+    @Query("SELECT * FROM person_table WHERE name LIKE :name")
+    suspend fun findByName(name: String):Person
+
+    @Query("SELECT * FROM person_table WHERE name = :name")
+    suspend fun findName(name: String): List<Person>
+
+    @Query("DELETE FROM person_table WHERE name = :name")
+    suspend fun deletePerson(name: String)
+
+    @Query("SELECT * FROM person_table ORDER BY id ASC")
+    fun readAll(): LiveData<List<Person>>
 }

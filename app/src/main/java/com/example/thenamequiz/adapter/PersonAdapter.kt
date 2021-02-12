@@ -1,23 +1,28 @@
 package com.example.thenamequiz.adapter
 
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.R
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
-import kotlinx.android.synthetic.main.activity_add.*
+import com.example.thenamequiz.model.PersonApplication
+import com.example.thenamequiz.model.PersonViewModel
+import com.example.thenamequiz.model.PersonViewModelFactory
 
 
-class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+class PersonAdapter(context: Context) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
+    private var persons = emptyList<Person>()
+    private val personViewModel: PersonViewModel by viewModels {
+        PersonViewModelFactory((application as PersonApplication).repository)
+    }
+
+
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageViewName = itemView.findViewById(R.id.imageViewName) as ImageView
@@ -31,11 +36,11 @@ class PersonAdapter(val personList: ArrayList<Person>) : RecyclerView.Adapter<Pe
     }
 
     override fun getItemCount(): Int {
-        return personList.size
+        return persons.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val person: Person = personList[position]
+        val person: Person = persons[position] //check if correct
         holder.imageViewName.setImageBitmap(person.image)
         holder.textViewName.text = person.name
         holder.delButton.setOnClickListener(){

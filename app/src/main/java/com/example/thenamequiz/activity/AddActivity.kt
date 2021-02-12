@@ -14,35 +14,37 @@ import android.widget.Toast
 import com.example.thenamequiz.R
 
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
+import com.example.thenamequiz.model.PersonApplication
 
 
 class AddActivity : AppCompatActivity() {
+   // val database: PersonRoomDatabase // Global variable
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
     }
 
-    fun onClickDatabase2(view: View){
+    fun onClickDatabase2(view: View) {
         val database = Intent(this, DatabaseActivity::class.java)
 
         startActivity(database)
     }
 
-    val REQUEST_IMAGE_CAPTURE = 1
     val REQUEST_IMAGE_PICK = 2
 
-    fun pickPhoto(view: View){
+    fun pickPhoto(view: View) {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, REQUEST_IMAGE_PICK)
     }
 
-    fun addPerson(view: View){
+    fun addPerson(view: View) {
         val bitmap: Bitmap = (imageView.drawable as BitmapDrawable).bitmap
         val person = Person(inputText.text.toString(), bitmap)
-        val data = (application as PersonList).data
+        val data = (application as PersonApplication).database
         data.add(person)
         Toast.makeText(this, "${inputText.text} added to database!", Toast.LENGTH_SHORT).show()
         inputText.setText("")
@@ -50,7 +52,18 @@ class AddActivity : AppCompatActivity() {
         restart()
     }
 
-
+   /* fun saveToDatabase(person: Person) {
+    class SaveToDatabase : AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids)
+        {
+            database.getPersonDao().insertPerson(Person)
+            return null
+        }
+    }
+    std: SaveToDatabase = SaveToDatabase()
+    std.execute()
+}*/
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

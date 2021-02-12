@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thenamequiz.R
 import com.example.thenamequiz.model.Person
-import com.example.thenamequiz.model.PersonList
 import com.example.thenamequiz.model.Quiz
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quiz.*
