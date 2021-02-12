@@ -9,8 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TheNameQuiz"
-        android:name=".model.PersonList">
+        android:theme="@style/Theme.TheNameQuiz">
         <activity
             android:name=".model.Quiz"
             android:label="Quiz"
