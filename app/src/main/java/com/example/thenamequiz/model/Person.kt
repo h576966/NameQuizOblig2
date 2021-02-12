@@ -8,10 +8,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "person_table")
 data class Person(
-    @PrimaryKey //(autoGenerate = true)
-    @NonNull
+    @PrimaryKey (autoGenerate = true)
     val id: Int,
-    @ColumnInfo(name="name")val name: String,
-    @ColumnInfo(name="image")val image: Bitmap)
+    val name: String,
+    val image: Bitmap)
 
+//@ColumnInfo(name="name") @NonNull
 
