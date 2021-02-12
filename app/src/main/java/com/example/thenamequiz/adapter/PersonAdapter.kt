@@ -11,10 +11,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thenamequiz.R
 import com.example.thenamequiz.model.Person
+import com.example.thenamequiz.model.PersonApplication
+import com.example.thenamequiz.model.PersonViewModel
+import com.example.thenamequiz.model.PersonViewModelFactory
 
 
 class PersonAdapter(context: Context) : RecyclerView.Adapter<PersonAdapter.ViewHolder>() {
     private var persons = emptyList<Person>()
+    private val personViewModel: PersonViewModel by viewModels {
+        PersonViewModelFactory((application as PersonApplication).repository)
+    }
+
+
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageViewName = itemView.findViewById(R.id.imageViewName) as ImageView
