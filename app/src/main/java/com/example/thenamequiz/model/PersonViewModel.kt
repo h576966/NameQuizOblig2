@@ -4,11 +4,12 @@ import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
 class PersonViewModel (private val repository: PersonRepository) : ViewModel() {
-    val allPersons: LiveData<List<Person>> = repository.allPersons.asLiveData()
+
+    private val readAll: LiveData<List<Person>> = repository.readAll.asLiveData()
 
 
     fun insert(person: Person) = viewModelScope.launch {
-        repository.insertPerson(person)
+        repository.addPerson(person)
         }
     }
 
@@ -25,6 +26,22 @@ class PersonViewModel (private val repository: PersonRepository) : ViewModel() {
 
 
     /*Here we've:
+
+    private val readAll: LiveData<List<Person>>
+    private val repository: PersonRepository
+
+    init {
+    val personDao = PersonRoomDatabase(application.personDao()
+    repository = UserRepository(personDao)
+    readAll = repository.readAll
+    }
+
+    fun addPerson(person: Person){
+    viewModelScope.launch(Dispatcher.IO) {
+    repository.addPerson(person)
+
+    }
+    }
 
     Created a class called WordViewModel that gets the WordRepository as a parameter and extends ViewModel. The Repository is the only dependency that the ViewModel needs. If other classes would have been needed, they would have been passed in the constructor as well.
     Added a public LiveData member variable to cache the list of words.

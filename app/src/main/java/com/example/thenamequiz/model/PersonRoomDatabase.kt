@@ -11,8 +11,8 @@ import kotlinx.coroutines.CoroutineScope
 abstract class PersonRoomDatabase: RoomDatabase() {
     abstract fun personDao(): PersonDao
 
-    companion object {
-
+    companion object {  //Creates Singleton
+        @Volatile
         private var INSTANCE: PersonRoomDatabase? = null
 
         internal fun getDatabase(context: Context, applicationScope: CoroutineScope): PersonRoomDatabase? {

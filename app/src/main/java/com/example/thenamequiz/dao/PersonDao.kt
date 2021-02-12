@@ -30,5 +30,5 @@ interface PersonDao {
     suspend fun deletePerson(name: String)
 
     @Query("SELECT * FROM person_table ORDER BY id ASC")
-    fun readAllData(): LiveData<List<Person>>
+    fun readAll(): LiveData<List<Person>>
 }
