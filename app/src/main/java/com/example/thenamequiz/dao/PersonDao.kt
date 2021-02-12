@@ -9,23 +9,26 @@ import com.example.thenamequiz.model.Person
 interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertPerson(person: Person)
+    suspend fun addPerson(person: Person)
 
     @Query("Select * FROM person_table")
-    fun getAll(): Flow<List<Person>> //LiveData -> Flow
+    suspend fun getAll(): Flow<List<Person>> //LiveData -> Flow
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg person: Person) //check persons
+    suspend fun addAll(vararg person: Person) //check persons
 
     @Delete
-    fun delete(person: Person)
+    suspend fun delete(person: Person)
 
     @Query("SELECT * FROM person_table WHERE name LIKE :name")
-    fun findByName(name: String):Person
+    suspend fun findByName(name: String):Person
 
     @Query("SELECT * FROM person_table WHERE name = :name")
-    fun findName(name: String): List<Person>
+    suspend fun findName(name: String): List<Person>
 
     @Query("DELETE FROM person_table WHERE name = :name")
-    fun deletePerson(name: String)
+    suspend fun deletePerson(name: String)
+
+    @Query("SELECT * FROM person_table ORDER BY id ASC")
+    fun readAllData(): LiveData<List<Person>>
 }

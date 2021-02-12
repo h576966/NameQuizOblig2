@@ -7,8 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.thenamequiz.dao.PersonDao
 import kotlinx.coroutines.CoroutineScope
 
-@Database(entities = [(Person::class)], version = 1)
-
+@Database(entities = [(Person::class)], version = 1, exportSchema = false)
 abstract class PersonRoomDatabase: RoomDatabase() {
     abstract fun personDao(): PersonDao
 
