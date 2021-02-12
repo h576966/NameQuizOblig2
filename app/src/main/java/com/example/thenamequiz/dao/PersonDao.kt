@@ -4,11 +4,12 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.thenamequiz.model.Person
 
 
 @Dao
 interface PersonDao {
-    @Query("SELECT * FROM persons ORDER BY name")
+    @Query("SELECT * FROM person ORDER BY name")
     fun getAll(): LiveData<List<Person>>
 
     @Query("SELECT * FROM persons WHERE id = :personId")
